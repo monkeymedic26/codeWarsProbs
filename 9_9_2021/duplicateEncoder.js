@@ -10,5 +10,17 @@
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
 function duplicateEncode(word){
-    // ...
+    const newWord = word.toLowerCase(); 
+    let result = "";
+    for (var i = 0; i < word.length; i++) {
+        if (newWord.indexOf(newWord[i]) === newWord.lastIndexOf(newWord[i])) {
+            result += "(";
+        } else {
+            result += ")";
+        }
+    }
+    return result;
 }
+
+duplicateEncode("herbicide");
+duplicateEncode("Herbicide");
