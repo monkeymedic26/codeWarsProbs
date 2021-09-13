@@ -41,7 +41,22 @@
 // You can see examples for your language in "Sample Tests".
 
 function productFib(prod){
-    
+  let fib = [0, 1];
+
+  for (var i = 0; i < prod; i++) {
+    if ((fib[i] * fib[i = 1]) < prod) {
+        fib.push(fib[i] + fib[i + 1]);
+        i++;
+    }
+    if ((fib[i] * fib[i + 1]) === prod) {
+        console.log(true);
+        return [fib[i], fib[i + 1], true];
+    }
+    if ((fib[i] * fib[i + 1]) > prod) {
+        console.log(false);
+        return [fib[i], fib[i + 1], false];
+    }
+  }
 }
 
 productFib(4895); // [55, 89, true])
