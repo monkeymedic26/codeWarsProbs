@@ -19,9 +19,25 @@
 // 26  =>  false
 
 var isSquare = function(n){
+    if (n === 0) {
+        return true;
+    }
     if (Math.sign(n) === -1 || Math.sign(n) === -0) {
         return false;
     }
 
-    
-  }
+    for (var i = 0; i <= n; i++) {
+        if ((i * i) === n) {
+            return true;
+        }
+    }
+    return false;
+}
+
+isSquare(-25);
+isSquare(-1);
+isSquare(0);
+isSquare(3);
+isSquare(4);
+isSquare(25);
+isSquare(26);
