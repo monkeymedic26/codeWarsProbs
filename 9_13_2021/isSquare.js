@@ -19,5 +19,9 @@
 // 26  =>  false
 
 var isSquare = function(n){
-    return false; // fix me
+    if (Math.sign(n) === -1 || Math.sign(n) === -0) {
+        return false;
+    }
+
+    
   }
