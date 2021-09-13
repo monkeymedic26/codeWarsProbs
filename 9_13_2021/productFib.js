@@ -44,9 +44,9 @@ function productFib(prod){
   let fib = [0, 1];
 
   for (var i = 0; i < prod; i++) {
-    if ((fib[i] * fib[i = 1]) < prod) {
+    if ((fib[i] * fib[i + 1]) < prod) {
         fib.push(fib[i] + fib[i + 1]);
-        i++;
+        continue;
     }
     if ((fib[i] * fib[i + 1]) === prod) {
         console.log(true);
