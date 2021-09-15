@@ -5,5 +5,20 @@
 // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
 function sumTwoSmallestNumbers(numbers) {  
-    //Code here
-  }
+    
+    for (var i = 0; i < numbers.length; i++) {
+        for (var j = 0; j < numbers.length - i - 1; j++) {
+            if (numbers[j + 1] < numbers[j]) {
+                [numbers[j + 1], numbers[j]] = [numbers[j], numbers[j + 1]];
+            }
+        }
+    }
+    
+    return numbers[0] + numbers[1];
+}
+
+  sumTwoSmallestNumbers([5, 8, 12, 19, 22]); // 13 
+  sumTwoSmallestNumbers([15, 28, 4, 2, 43]); // 6
+  sumTwoSmallestNumbers([3, 87, 45, 12, 7]); // 10 
+  sumTwoSmallestNumbers([52, 76, 14, 12, 4]);  // 16 
+  sumTwoSmallestNumbers([23, 71, 33, 82, 1]); // 24 
