@@ -25,7 +25,17 @@
 // Assumption: Assume that Desired Principal 'D' is always greater than the initial principal. However it is best to take into consideration that if Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
 
 function calculateYears(principal, interest, tax, desired) {
-    // your code
+    let newBalance = principal;
+    let years = 0
+
+    while (newBalance < desired) {
+      years++;
+      let earned = newBalance * interest;
+      let taxed = earned * tax;
+      newBalance = newBalance + (earned - taxed); 
+    }
+    
+    return years;
 }
 
 calculateYears(1000, 0.05, 0.18, 1100); // 3)
